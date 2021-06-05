@@ -19,7 +19,7 @@ class CreateBrandsTable extends Migration
             $table->string('nationality');   
             $table->timestamps();
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.

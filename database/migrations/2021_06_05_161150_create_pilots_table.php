@@ -17,10 +17,10 @@ class CreatePilotsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');   
-            $table->string('nationality');
+            $table->string('nationality');  
             $table->date('date_of_birth');   
             $table->timestamps();
-        });
+        });   
     }
 
     /**

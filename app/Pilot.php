@@ -12,4 +12,9 @@ class Pilot extends Model
         'nationality',
         'date_of_birth',   
     ];
+
+    public function cars(){
+
+        return $this -> belongsToMany(Car::class);   
+    }
 }

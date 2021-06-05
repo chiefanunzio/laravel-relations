@@ -11,6 +11,7 @@ class PilotSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // factory(Pilot::class, 5)->create();   
     }
 }
+   

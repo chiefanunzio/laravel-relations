@@ -10,6 +10,7 @@ $factory->define(Car::class, function (Faker $faker) {
         'name' => $faker -> word,
         'model' => $faker -> word,
         'kw' => $faker -> numberBetween(50, 300),   
+        
     ];
 });
-   
+      

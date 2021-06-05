@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Brand;   
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CarSeeder::class);         
-    }   
+        $this->call(
+            BrandSeeder::class,        
+               
+               
+        );            
+    }      
 }

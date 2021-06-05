@@ -8,7 +8,12 @@ class Brand extends Model
 {
     protected $fillable = [
 
-        'name',
+        'name',   
         'nationality',   
     ];
-}
+
+    public function cars(){
+
+        return $this -> hasToMany(Car::class);   
+    }   
+}   
