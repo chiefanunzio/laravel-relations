@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Brand;   
+use App\Pilot;   
 class Car extends Model
 {
     protected $fillable =[
@@ -23,3 +24,4 @@ class Car extends Model
         return $this -> belongsTo(Brand::class);      
     }
 }
+   

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+ use App\Brand;      
 class BrandSeeder extends Seeder
 {
     /**
@@ -10,8 +10,8 @@ class BrandSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // factory(Brand::class, 10)->create();
+    {         
+        factory(Brand::class, 10)->create();
     }
 }
          

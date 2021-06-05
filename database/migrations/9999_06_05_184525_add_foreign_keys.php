@@ -8,7 +8,7 @@ class AddForeignKeys extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *   
      * @return void
      */
     public function up()
@@ -23,32 +23,32 @@ class AddForeignKeys extends Migration
         Schema::table('car_pilot', function (Blueprint $table) {
 
             $table -> foreign('car_id', 'pilotcar')
-            -> references('id')
-            -> on('cars');   
+                    -> references('id')
+                    -> on('cars');   
 
             $table -> foreign('pilot_id', 'carpilot')
-            -> references('id')    
-            -> on('pilots');      
+                    -> references('id')    
+                    -> on('pilots');      
         });
 
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.   
      *
      * @return void
      */
     public function down()
     {
         Schema::table('cars', function (Blueprint $table) {
-           $table -> dropForeign('carbrand');  
+           $table -> dropForeign('carbrand');     
        });   
              
         Schema::table('car_pilot', function (Blueprint $table) {
 	        $table -> dropForeign('pilotcar');   
             $table -> dropForeign('carpilot');
         });   
-
-    }
+   
+    }      
 }      
-      
+         
