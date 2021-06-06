@@ -1,5 +1,5 @@
 <header>
     <h2>
-        this is header   
+        <a href="{{route('create')}}">create a new car</a> 
     </h2>
-</header>
+</header>      
