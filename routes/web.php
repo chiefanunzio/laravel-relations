@@ -8,7 +8,10 @@ Route::get('/', 'homeController@home')
     ->name('home');   
 
 Route::get('/pilot/show/{id}', 'homeController@show')
--> name('show');   
+-> name('show');
+
+Route::get('/car/carShow/{id}', 'homeController@carShow')   
+-> name('carShow');
 
 Route::get('/car/create' , 'homeController@create')
     ->name('create'); 

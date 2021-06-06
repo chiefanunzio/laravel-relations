@@ -1,5 +1,5 @@
 <footer>
     <h2>
-        this is footer
+        <a href="{{route('home')}}">torna alla home</a> 
     </h2>
-</footer>   
+</footer>      

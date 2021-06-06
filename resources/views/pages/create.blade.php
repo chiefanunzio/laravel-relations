@@ -12,14 +12,23 @@
 
         <label for="kw">kw</label>
         <input type="number" id="kw" name="kw" required>
-
-        <label for="brand_id">brand_id</label>      
+   
+        <label for="brand_id">brand</label>      
         <select type="text" id="brand_id" name="brand_id" required>
             <option selected disabled >Brand</option>
             @foreach ($brands as $brand)
                 <option value="{{$brand -> id}}">{{$brand -> name}}</option>
-            @endforeach
+                @endforeach
+        </select>     
 
+        <label for="pilots_id[]">pilot</label>         
+        <select type="text" id="pilots_id[]" name="pilots_id[]" required multiple>      
+               
+            @foreach ($pilots as $pilot)
+            <option value="{{$pilot -> id}}">{{$pilot -> name}} || {{$pilot -> lastname}}</option>      
+            @endforeach
+        </select>
+      
         <input type="submit" name="crea" value="CREA LA TUA AUTO">   
     </form>
-@endsection               
+@endsection                  

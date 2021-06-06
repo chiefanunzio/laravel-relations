@@ -18,18 +18,26 @@ class homeController extends Controller
 
     public function show($id)
     {   
-
+        
         $pilot = Pilot::findOrFail($id);      
 
-        return view('pages.show', compact('pilot'));   
-    }   
+        return view('pages.show', compact('pilot'));         
+    }
+    
+    public function carShow($id)
+    {   
+        
+        $car = Car::findOrFail($id);      
+
+        return view('pages.carShow', compact('car'));            
+    }
 
     public function create(){
 
         $brands = Brand::all();
-
-        return view('pages.create', compact('brands'));   
-    }  
+        $pilots = Pilot::all();
+        return view('pages.create', compact('brands','pilots'));   
+    }     
     
     public function stock(Request $request){
 
@@ -41,13 +49,16 @@ class homeController extends Controller
         ]);   
 
         $brand = Brand::findOrFail($request -> get('brand_id'));
+        // $pilot = Pilot::findOrFail($request -> get('pilot_id'));
 
-        $car = Car::make($validated);
+        $car = Car::make($validated);      
         $car ->brand() -> associate($brand);
-        $car -> save();
+        $car -> save();   
 
-        return redirect() -> route('home');   
-           
+        $car -> pilots() -> attach($request -> get('pilots_id'));
+        $car -> save();      
+        return redirect() -> route('home');         
+              
     }
        
 }   

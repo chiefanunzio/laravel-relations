@@ -7,10 +7,21 @@
             <ul>
                 @foreach ($cars as $car)
                     <li> 
-                        <a href="{{ route('show', $car -> id) }}">  
-                        {{$car -> name}} 
+                        CAR NAME =    
+                        <a href="{{ route('carShow', $car -> id) }}">     
+                        {{$car -> name}}    
                                  
-                        </a>   
+                        </a> <br>   
+                        
+                        CAR BRAND => {{$car -> brand -> name}}   
+                        <ol>   
+                            PILOT CAR :  
+                            @foreach ($car -> pilots as $pilot)
+                            <a href="{{ route('show', $pilot -> id) }}">
+                                <li>{{$pilot -> name}}</li>   
+                            </a>   
+                            @endforeach
+                        </ol>   
                     </li>   
                 @endforeach    
             </ul>             
